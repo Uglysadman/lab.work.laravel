@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Auth::routes();
@@ -22,3 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/main', 'MainController@index')->name('main');
+
+Route::get('/blog', 'BlogController@index')->name('blog');
+
+Route::get('/guestBook', 'GuestBookController@index')->name('guestBook');
