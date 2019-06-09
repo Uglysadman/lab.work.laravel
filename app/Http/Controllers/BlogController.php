@@ -8,6 +8,11 @@ use App\Comment;
 
 class BlogController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $posts = Post::paginate(3);

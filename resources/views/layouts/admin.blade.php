@@ -22,9 +22,7 @@
                     document.getElementById('logout-form').submit();">
                 {{ __('Выход') }}
             </a>
-            @if(Auth::user()->hasRole('admin'))
-                <a class="btn btn-primary" href="{{route('admin')}}">Администратор</a>
-            @endif
+            <a class="btn btn-primary" href="{{route('main')}}">Пользователь</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
@@ -37,13 +35,13 @@
         <div class="logo"><a href="{{route('main')}}">MAX</a></div>
         <ul class="menu">
             <li class="menu_item">
-                <a href="{{route('main')}}" class="menu_link">Главная</a>
+                <a href="{{route('admin.main')}}" class="menu_link">Главная</a>
             </li>
             <li class="menu_item">
-                <a href="{{route('guestBook')}}" class="menu_link">Гостевая книга</a>
+                <a href="{{route('admin.editGuestBook')}}" class="menu_link">Гостевая книга</a>
             </li>
             <li class="menu_item">
-            <a href="{{route('blog')}}" class="menu_link">Мой блог</a>
+                <a href="{{route('admin.editorBlog')}}" class="menu_link">Редактор блога</a>
             </li>
         </ul>
     </nav>

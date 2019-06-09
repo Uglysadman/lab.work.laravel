@@ -40,6 +40,11 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function guest_books()
+    {
+        return $this->hasMany(GuestBook::class);
+    }
+
     public function hasAccess(array $permissions)
     {
         foreach ($this->roles as $role)

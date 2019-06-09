@@ -5,6 +5,7 @@
 @section('content')
     <link rel="stylesheet" type="text/css" href="{{asset('css/forms.css')}}"/>
     <div id="form_panel">
+        @if(count($posts))
         @foreach($posts as $post)
             <article class="content-blog" id="{{$post->id}}">
                 <article class="content-note">
@@ -20,7 +21,7 @@
 
                     @else
                         <div>
-                            <button class="btn commenting">Добавить комментарий</button></div>
+                            <button class="btn btn-primary">Добавить комментарий</button></div>
                         <form method="POST" style="display:none">
                             <textarea name="text_comment" placeholder="Текст комментария" required></textarea>
                             <input type="text" name="note_id" value="'. $note['id'] .'" style="display:none">
@@ -42,8 +43,9 @@
                 @endif
             </article>
         @endforeach
-        <div class="pagination-lg">
+        <div class="pagination">
             {{$posts->links()}}
         </div>
+        @endif
     </div>
 @endsection
