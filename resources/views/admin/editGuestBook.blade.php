@@ -16,7 +16,7 @@
                             <form method="post" action="{{route('admin.editGuestBook.destroy',
                                 ['id' => $message->id])}}">
                                 @csrf
-                                <input type="submit" value="Удалить" class="btn btn-danger ml-2">
+                                <input type="submit" value="Удалить" class="btn btn-danger ml-3">
                             </form>
                         </div>
                         <form method="POST" style="display:none" action="{{route('admin.editGuestBook.update',
@@ -48,5 +48,5 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="/public/js/blog.js"></script>
+<script type="text/javascript" src="{{asset('js/GuestBook.js')}}"></script>
 @endsection

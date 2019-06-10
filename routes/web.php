@@ -27,6 +27,8 @@ Route::get('/main', 'MainController@index')->name('main');
 
 Route::get('/blog', 'BlogController@index')->name('blog');
 
+Route::post('/blog/add_comment/{post_id}', 'BlogController@add_comment')->name('blog.add_comment');
+
 Route::get('/guestBook', 'GuestBookController@index')->name('guestBook');
 
 Route::post('/guestBook', 'GuestBookController@store')->name('guestBook.store');
@@ -44,3 +46,11 @@ Route::post('/admin/editGuestBook/destroy/{id}', 'Admin\EditGuestBookController@
     ->name('admin.editGuestBook.destroy');
 
 Route::get('/admin/editorBlog', 'Admin\EditorBlogController@index')->name('admin.editorBlog');
+
+Route::post('/admin/editorBlog', 'Admin\EditorBlogController@store')->name('admin.editorBlog.store');
+
+Route::post('/admin/editorBlog/update/{id}', 'Admin\EditorBlogController@update')
+    ->name('admin.editorBlog.update');
+
+Route::post('/admin/editorBlog/destroy/{id}', 'Admin\EditorBlogController@destroy')
+    ->name('admin.editorBlog.destroy');

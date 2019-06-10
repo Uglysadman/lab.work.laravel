@@ -43,7 +43,7 @@ class EditGuestBookController extends Controller
             return redirect()->back()->withErrors('Delete Error');
         }
 
-        session()->flash('flash_message', 'Post deleted');
+        session()->flash('flash_message', 'Message deleted');
         return redirect()->back();
     }
 }
